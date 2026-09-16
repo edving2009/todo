@@ -1,0 +1,10 @@
+CompileFlags:
+  Add:
+    - "-std=c++26"
+    - "-x"
+    - "c++"
+  Remove:
+    - "-fmodules-ts"
+    - "-fmodule-mapper=*"
+    - "-fdeps-format=*"
+    - "-freflection"

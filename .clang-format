@@ -1,0 +1,43 @@
+---
+Language: Cpp
+Standard: Latest
+BasedOnStyle: Microsoft
+PointerAlignment: Left
+IndentWidth: 4
+
+NamespaceIndentation: None
+FixNamespaceComments: true
+ShortNamespaceLines: 0
+
+ColumnLimit: 0
+BinPackArguments: true
+BinPackParameters: true
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  AfterFunction: true
+  AfterControlStatement: MultiLine
+  BeforeElse: true
+  AfterStruct: true
+  AfterNamespace: false 
+
+# includes
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  # "" includes
+  - Regex: '^".*"$'
+    Priority: 1
+    SortPriority: 1
+  # <> includes
+  - Regex: '^<.*\.(h|hpp)>$'
+    Priority: 2
+    SortPriority: 2
+  # std lib includes
+  - Regex: '^<[^.]+>$'
+    Priority: 3
+    SortPriority: 3
+...
