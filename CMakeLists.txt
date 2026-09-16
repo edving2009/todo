@@ -5,7 +5,8 @@ project(todo LANGUAGES CXX)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(todo 
-    src/main.cpp)
+    src/main.cpp
+    src/fs.cpp)
 
 target_compile_features(todo
     PUBLIC
