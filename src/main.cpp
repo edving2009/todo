@@ -6,6 +6,7 @@
 
 #include "task.h"
 #include "fs.h"
+#include "terminal.h"
 
 void print_help()
 {
@@ -19,6 +20,10 @@ void print_version()
 
 int main(int argc, char* argv[])
 {
+    // TODO: if on windows init terminal to display colors
+
+    Terminal::init_terminal();
+
     std::vector<Task> tasks;
 
     std::println("Argument count: {}\n", argc);

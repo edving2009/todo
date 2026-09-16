@@ -6,7 +6,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(todo 
     src/main.cpp
-    src/fs.cpp)
+    src/fs.cpp
+    src/terminal.cpp)
 
 target_compile_features(todo
     PUBLIC
