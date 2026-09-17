@@ -19,7 +19,12 @@ target_include_directories(todo
 
 if(WIN32)
     target_compile_definitions(todo PRIVATE _CONSOLE UNICODE _UNICODE WIN32)
-    target_compile_options(todo PRIVATE /W3)
+    target_compile_options(todo PRIVATE
+ 	/W3 $<$<CONFIG:Release>:/O2 /Oi /Gy>)
+    target_link_options(todo PRIVATE
+        $<$<CONFIG:Release>:/OPT:REF /OPT:ICF>)
 else()
-    target_compile_options(todo PRIVATE -Wall -Wextra)
+    target_compile_options(todo PRIVATE
+	-Wall -Wextra
+	$<$<CONFIG:Release>:-O3>)
 endif()
