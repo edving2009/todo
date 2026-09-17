@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
     std::string command = std::string(argv[1]);
 
     // Help
-    if (command == "help") {
+    if (command == "help" || command == "h") {
         print_help();
         return 0;
     }
