@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-enum class Status
+enum class State
 {
     TODO,
     DOING,
@@ -13,29 +13,30 @@ class Task
   public:
     std::string title;
     std::string description;
-    Status status;
+    State state;
 
-    std::string status_to_string()
+    std::string state_to_string()
     {
-        if (status == Status::TODO)
-            return "TODO";
-        else if (status == Status::DOING)
-            return "DOING";
-        else if (status == Status::DONE)
-            return "DONE";
-        
-        return "UNKNOWN";
+        if (state == State::TODO)
+            return "todo";
+        else if (state == State::DOING)
+            return "doing";
+        else
+            return "done";
     }
 
-    Status string_to_status(const std::string& string)
+    State string_to_state(const std::string& string)
     {
-        if (string == "TODO")
-            return Status::TODO;
-        else if (string == "DOING")
-            return Status::DOING;
-        else if (string == "DONE")
-            return Status::DONE;
+        if (string == "todo")
+            return State::TODO;
+        else if (string == "doing")
+            return State::DOING;
+        else
+            return State::DONE;
+    }
 
-        return Status::TODO;
+    bool operator<(const Task& other) const
+    {
+        return state < other.state;
     }
 };
