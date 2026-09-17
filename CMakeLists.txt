@@ -11,7 +11,7 @@ add_executable(todo
 
 target_compile_features(todo
     PUBLIC
-        cxx_std_26)
+        cxx_std_23)
 
 target_include_directories(todo
     PUBLIC

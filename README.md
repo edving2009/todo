@@ -1,5 +1,5 @@
 # todo
-Simple CLI app build using C++26. It was built to efficiently store todo lists in project similar to git.
+Simple CLI app build using C++. It was built to efficiently store todo lists in project similar to git.
 
 ## Features
 - Create tasks and assign description to them
